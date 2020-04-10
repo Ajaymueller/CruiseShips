@@ -1,15 +1,21 @@
 /*globals describe it expect */
 const Port = require('../src/Port.js');
 
-describe('port', () => {
+describe('ship', () => {
+    describe('can be instantiated and has a name property', () => {
+        let port;
+    beforeEach(() => {
+        port = new Port;
+    })
     it('can be instantiated', () => {
-        expect(new Port).toBeInstanceOf(Object);
+        expect(port).toBeInstanceOf(Object);
     });
     it('has a name property', () => {
         const port = new Port('Calais')
         expect(port.name).toBe('Calais');
     });
-});
+    })
+})
 
 describe('addShip', () => {
     it('adds ship to ship property when ship docks at port', () => {
