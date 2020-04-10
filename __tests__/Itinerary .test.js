@@ -1,3 +1,4 @@
+/*globals describe it expect */
 const Itinerary = require('../src/Itinerary.js')
 
 
