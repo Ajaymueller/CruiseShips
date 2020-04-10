@@ -3,6 +3,7 @@ const Ship = require('../src/Ship.js');
 const Port = require('../src/Port.js');
 const Itinerary = require('../src/Itinerary.js');
 
+
 describe('ship', () => {
     describe('with ports and an itinerary', () => {
         let dover;
@@ -64,8 +65,6 @@ describe('ship', () => {
             ship.setSail();
             ship.dock();
             expect(() => ship.setSail()).toThrowError('End of itinerary reached');
-            });
-
-        
+            });   
     });
 });
