@@ -32,10 +32,5 @@ describe('port', () => {
         port.addShip(ship);
         expect(port.ships).toContain(ship);
         });
-    it('ship gets added to port on instantiation', () => {
-        const dover = jest.fn();
-        expect(dover.ships).toContain(ship);
-        expect(dover.addShip).toHaveBeenCalledWith(ship);
-        });
     })
 });
