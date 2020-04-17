@@ -1,7 +1,7 @@
 /*globals describe it expect */
 const Port = require('../src/Port.js');
 
-describe('ship', () => {
+describe('port', () => {
     describe('can be instantiated and has a name property', () => {
         let port;
         let titanic;
@@ -31,6 +31,11 @@ describe('ship', () => {
         const port = new Port('Dover')
         port.addShip(ship);
         expect(port.ships).toContain(ship);
+        });
+    it('ship gets added to port on instantiation', () => {
+        const dover = jest.fn();
+        expect(dover.ships).toContain(ship);
+        expect(dover.addShip).toHaveBeenCalledWith(ship);
         });
     })
 });
