@@ -5,33 +5,26 @@ const Itinerary = require('../src/Itinerary.js')
 describe('itinerary', () => {
     describe('can be instantiated with ports property', () => {
         let itinerary;
-        let port;
     beforeEach(() => {
-        itinerary = new Itinerary;
-
-        port = {
-            removeShip: jest.fn(),
-            addShip: jest.fn(),
-            };
-        
           dover = {
-            ...port,
             name: 'Dover',
             ships: []
           };
         
           calais = {
-            ...port,
             name: 'Calais',
             ships: []
           };
+        itinerary = new Itinerary([dover, calais]);
     })
     it('can be instantiated', () => {
         expect(itinerary).toBeInstanceOf(Object);
         });
     it('has a ports property', () => {
-        const itinerary = new Itinerary([dover, calais]);
-        expect(itinerary.ports).toEqual([dover, calais]);
+        expect(itinerary.ports).not.toBeUndefined();
         });
-})
+    it('has a ports property equal to ports declared in when Itinerary is instantaited', () => {
+      expect(itinerary.ports).toEqual([dover, calais]);
+    });
+});
 });
