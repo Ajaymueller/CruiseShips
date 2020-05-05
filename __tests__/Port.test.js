@@ -31,6 +31,7 @@ describe('port', () => {
         port.addShip(titanic);
         port.addShip(queenMary);
         port.removeShip(queenMary);
+        this.previousPort = this.currentPort
         expect(port.ships).toEqual([titanic]);
         });
 });

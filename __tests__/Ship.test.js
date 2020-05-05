@@ -30,7 +30,6 @@ describe('ship', () => {
         itinerary = {
             ports:[dover, calais]
         };
-
         ship = new Ship(itinerary);
     });
         it('can be instantiated', () => {
@@ -38,9 +37,7 @@ describe('ship', () => {
             });
 
         it('has a starting port', () => {
-            const itinerary = new Itinerary([port]);
-            const ship = new Ship(itinerary);
-            expect(ship.currentPort).toEqual(port);
+            expect(ship.currentPort).toEqual(dover);
             });
         it('gets added to port on instantiation', () => {
             expect(dover.addShip).toHaveBeenCalledWith(ship);
